@@ -2,22 +2,72 @@
     <section class="w-100 h-100 p-5 flex justify-center">
         <div class="w-[50vw] h-[auto] mt-5 p-5 rounded-md shadow-2xl flex flex-col gap-6">
             <div class="flex w-full items-center gap-4">
-                <label for="regani" class="flex-none">REGANI</label>
+                <label for="regani" class="flex-none">REGANI:</label>
                 <InputText class="flex-grow min-w-0" type="text" v-model="value" />
-                <Button type="button" label="Search" severity="success" icon="pi pi-search" :loading="loading" @click="load" class="flex-none" />
+                <Button type="button" label="Search" icon="pi pi-search" :loading="loading" @click="load" class="flex-none" />
             </div>
             <div class="flex gap-6">
                 <div class="w-[40%]">
                     <UploadFile />
                 </div>
                 <div class="w-[60%] flex flex-col gap-4">
-                    <div class="flex items-center gap-4">
-                        <label for="">GLP</label>  
-                        <AutoComplete v-model="glpValue" :suggestions="items" @complete="search" />
+                    <div class="flex items-center gap-4  w-full">
+                        <label for="">GLP:</label>  
+                        <AutoComplete 
+                            class="w-full p-fluid"
+                            v-model="glpValue" 
+                            :suggestions="items" 
+                            @complete="search" 
+                        />
                     </div>
                     <div class="flex items-center gap-4">
-                        <label for="">PLU</label>  
-                        <AutoComplete v-model="pluValue" :suggestions="items" @complete="search" />
+                        <label for="">PLU:</label>  
+                        <AutoComplete 
+                            class="w-full p-fluid" 
+                            v-model="pluValue" 
+                            :suggestions="items" 
+                            @complete="search" />
+                    </div>
+                    <div class="w-full flex gap-4">
+                        <div class="w-2/4 flex items-center gap-4">
+                            <label for="">PSO:</label>  
+                            <AutoComplete 
+                                class="w-full p-fluid" 
+                                v-model="pluValue" 
+                                :suggestions="items" 
+                                @complete="search" 
+                            />   
+                        </div>
+                        <div class="w-2/4 flex items-center gap-4">
+                            <label for="">PRE:</label>  
+                            <AutoComplete 
+                                class="w-full p-fluid" 
+                                v-model="pluValue" 
+                                :suggestions="items" 
+                                @complete="search" 
+                            />   
+                        </div>
+                    </div>
+                    <div class="w-full flex gap-4">
+                        <div class="w-2/4 flex items-center gap-4">
+                            <label for="">DEP:</label>  
+                        <AutoComplete 
+                            class="w-full p-fluid" 
+                            v-model="pluValue" 
+                            :suggestions="items" 
+                            @complete="search" />   
+                        </div>
+                        <div class="w-2/4 flex items-center gap-4">
+                            <label for="">PIS:</label>  
+                        <AutoComplete 
+                            class="w-full p-fluid" 
+                            v-model="pluValue" 
+                            :suggestions="items" 
+                            @complete="search" />   
+                        </div>
+                    </div>
+                    <div class="mt-4 flex  justify-end">
+                        <Button type="button" label="Add List" severity="success" :loading="loading" @click="load" class="flex-none" />
                     </div>
                 </div>      
             </div>

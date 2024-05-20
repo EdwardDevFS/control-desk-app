@@ -1,13 +1,13 @@
 <template>
-    <div v-if="!imageUploaded" class="flex items-center justify-center cursor-pointer outline-dashed outline-blue-400 w-[100%] h-[400px]" @click="openFilePicker" >
+    <div v-if="!imageUploaded" class="flex items-center justify-center cursor-pointer outline-dashed outline-blue-400 w-[100%] h-[325px]" @click="openFilePicker" >
         <div class="flex flex-col justify-center items-center gap-2" @click="openFilePicker">
             <i class="pi pi-image " style="font-size: 2rem; color: var(--primary-color)"></i>
             <p class="text-blue-500 font-bold">Click to upload an image</p>
             <input type="file" ref="fileInput" @change="handleFileChange" accept="image/*" style="display: none;">
         </div>
     </div>
-    <div class="w-[100%] h-[400px]"  v-else>
-        <div class="min-w-1 max-w-72 h-[315px] border-solid border-2 border-sky-500">
+    <div class="w-[100%] h-[325px]"  v-else>
+        <div class="h-[325px] border-solid border-2 border-sky-500">
             <img class="w-[100%] h-[100%] object-fill" :src="imageUrl" alt="asdasd">
         </div>
     </div>
